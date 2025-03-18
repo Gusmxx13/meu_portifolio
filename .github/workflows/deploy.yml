@@ -18,7 +18,7 @@ jobs:
     - name: cria os arquivos para deploy
       uses: actions/upload-pages-artifact@v3
       with:
-        path: .
+        path: 
 
     - name: Publica no GitPages
       uses: actions/deploy-pages@v1
