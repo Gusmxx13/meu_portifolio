@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Quando houver um push para a branch main
 
+permissions:
+  id-token: write  # Adiciona a permissão necessária para gerar ID tokens
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
