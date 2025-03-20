@@ -1,0 +1,25 @@
+name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Quando houver um push para a branch main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checa o repositório
+      uses: actions/checkout@v3
+
+    - name: Configura o GitHub Pages
+      uses: actions/configure-pages@v3
+
+    - name: Cria os arquivos para deploy
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./portifolio  # A pasta onde estão seus arquivos, no seu caso é portifolio
+
+    - name: Publica no GitHub Pages
+      uses: actions/deploy-pages@v1
